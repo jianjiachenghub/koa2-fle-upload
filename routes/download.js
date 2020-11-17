@@ -1,5 +1,5 @@
 const router = require("koa-router")();
-const send = require("koa-send");
+const send = require("koa-send"); // https://www.cnblogs.com/jiasm/p/9527536.html 是一个封装原生下载文件的中间件 传入路径就把文件数据写入response
 
 router.post("/download/:name", async (ctx) => {
   const name = ctx.params.name;
