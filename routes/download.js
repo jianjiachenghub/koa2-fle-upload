@@ -4,6 +4,8 @@ const send = require("koa-send");
 router.post("/download/:name", async (ctx) => {
   const name = ctx.params.name;
   const path = `upload/${name}`;
+  // response.attachment([filename], [options]) 
+  // 将 Content-Disposition 设置为 “附件” 以指示客户端提示下载。(可选)指定下载的 filename 和部分 参数。
   ctx.attachment(path);
   await send(ctx, path);
 });
